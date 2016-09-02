@@ -1,0 +1,22 @@
+{
+  "name": "ez-client",
+  "version": "0.1.0",
+  "description": "一个简单的浏览器/webview判别以及常用方法的集。",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./build/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jack-Lo/ez-client.git"
+  },
+  "keywords": [
+    "client"
+  ],
+  "author": "jack lo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jack-Lo/ez-client/issues"
+  },
+  "homepage": "https://github.com/jack-Lo/ez-client#readme"
+}
