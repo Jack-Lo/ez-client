@@ -62,8 +62,8 @@ delCookie   | key            |       -      |    删除cookie
 
 client内置两个信息，可直接获取输出：
 
-1. **ua** navigator.userAgent
-2. **lang** navigator.language
+1. **ua** : navigator.userAgent
+2. **lang** : navigator.language
 
 
 
