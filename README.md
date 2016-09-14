@@ -6,7 +6,7 @@
 ### install
 
 ```shell
-npm install on-fire --save
+npm install ez-client --save
 ```
 
 
