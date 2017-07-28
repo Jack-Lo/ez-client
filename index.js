@@ -64,7 +64,7 @@ function main () {
       exdate.setDate(exdate.getDate() + days)
     }
 
-    doc.cookie = key + '=' + escape(val) + ((days == null) ? '' : ';expires=' + exdate.toGMTString())
+    doc.cookie = key + '=' + escape(val) + ((days == null) ? '' : ';path=/;expires=' + exdate.toGMTString())
   }
 
   client.getCookie = function (key) {  // 获取cookie
