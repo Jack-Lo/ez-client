@@ -1,43 +1,69 @@
 ## 简介
 
-一个基于[rollup](http://rollupjs.org)的开发脚手架，帮助快速构建JavaScript工程。你可以用它来**开发一个基于JavaScript的插件/库/框架**，运行于浏览器环境或者nodejs环境。  
+一个简单的浏览器/webview判别以及常用方法的集。
 
-> rollup.js: the next-generation JavaScript module bundler.
+客户端的各种ua以及各种判别方法的封装，涵盖uc、safari、qq、微信、微博等等，以及各种基于客户端的常用操作，比如cookie的读/写/删等等。
 
-rollup是下一代JavaScript打包工具，能够高效地将你的es2015应用打包为各种主流格式的单一文件。比起大而全的webpack，rollup更专注于JavaScript，因而运行起来十分的轻量快捷，适合一些纯JavaScript的项目开发。  
 
-当然，虽然说rollup专注于JavaScript，但是因为各种强大的插件存在，rollup同样也具备打包其他类型模块的能力，如css、vue等等。  
+## Install
+
+```shell
+npm install ez-client --save
+```
+
+
+## 使用
+
+```javascript
+import client from 'ez-client'
+
+var key = 'test_cookie'
+
+console.log('mobile: ' + client.isMobile())
+console.log('weixin: ' + client.isWeiXin())
+
+client.setCookie(key, 123, 2)
+
+console.log(client.getCookie(key))
+```
+
 
 ## 功能
 
-考虑到开发JavaScript工程时所需要的各种功能，本工具提供：
+### UA
 
-1. 打包方式涵盖`amd`/`commonjs`/`umd`/`iife`/`es`，兼容webpack；
-2. [babel](http://babeljs.io)实时编译，随时随地**ES2015 and beyond**；
-3. 集成[browser-sync](http://browsersync.io)，强大的web调试功能；
-3. 集成[mocha](http://mochajs.org)测试框架。
+api | 入参 | 返回值 | 功能
+--- | ---- | ------ | ----
+isIE        |    -    |    Boolean    |    判别IE内核
+isOpera     |    -    |    Boolean    |    判别opera内核
+isWebKit    |    -    |    Boolean    |    判别苹果/谷歌内核
+isFireFox   |    -    |    Boolean    |    判别火狐内核
+isMobile    |    -    |    Boolean    |    判别移动终端
+isIOS       |    -    |    Boolean    |    判别ios终端
+isAndroid   |    -    |    Boolean    |    判别android终端/uc浏览器
+isIPhone    |    -    |    Boolean    |    判别iPhone/QQHD浏览器
+isIPad      |    -    |    Boolean    |    判别iPad
+isWebApp    |    -    |    Boolean    |    判别web应该程序，没有头部与底部
+isWeiBo     |    -    |    Boolean    |    判别微博
+isWeiXin    |    -    |    Boolean    |    判别微信
+isUC        |    -    |    Boolean    |    判别uc
+isQQ        |    -    |    Boolean    |    判别qq
+isSafari    |    -    |    Boolean    |    判别safari
 
-## 命令
 
-+ `npm run serve`：启动http服务。
-  - 默认使用`3000`端口，打开[localhost:3000](http://localhost:3000)
-  - 服务器根目录为`/server`和`/dist`，并实时监听变化
-  - 配置文件为`/bs-config.js`
-- `npm run clear`： 删除`/dist`目录。
-+ `npm run dev`：开发模式。
-  - 默认一次性打包`umd`、`cjs`和`es`三种模式
-  - 监听`/src`目录文件变化，动态实时打包到`/dist`目录下
-+ `npm run build`：生产模式。
-  - 默认一次性打包`umd`、`cjs`和`es`三种模式
-  - 打包目录为`/dist`
-- `npm run dev:umd`: 同`dev`，只打包`umd`格式。
-- `npm run dev:cjs`: 同`dev`，只打包`commonjs`格式。
-- `npm run dev:es`: 同`dev`，只打包`es module`格式。
-- `npm run build:umd`: 同`build`，只打包`umd`格式。
-- `npm run build:cjs`: 同`build`，只打包`commonjs`格式。
-- `npm run build:es`: 同`build`，只打包`es module`格式。
-+ `npm test`： 执行测试用例。
-  - 基于mocha框架
-  - 测试用例存放在`/test`目录下
-+ `npm run test:watch`： 同`test`，实时执行测试用例。
+### Cookie
+
+api | 入参 | 返回值 | 功能
+--- | ---- | ------ | ----
+﻿setCookie   | key, val, days, [path] |    string    |    添加/修改cookie
+getCookie   | key                    |    string    |    获取cookie
+delCookie   | key, [path]            |       -      |    删除cookie
+
+
+### Information
+
+client内置两个信息，可直接调用输出：
+
+- **ua**：navigator.userAgent
+- **lang**：navigator.language
 
