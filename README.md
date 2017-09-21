@@ -60,9 +60,16 @@ getCookie   | key                    |    string    |    获取cookie
 delCookie   | key, [path]            |       -      |    删除cookie
 
 
+### Others
+
+api | 入参 | 返回值 | 功能
+--- | ---- | ------ | ----
+$extend | obj | - | 用于对**client**进行扩展，注意对于原有的同名api，这是个覆盖操作
+
+
 ### Information
 
-client内置两个信息，可直接调用输出：
+**client**内置两个信息，可直接调用输出：
 
 - **ua**：navigator.userAgent
 - **lang**：navigator.language
