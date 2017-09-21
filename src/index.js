@@ -2,9 +2,13 @@ import { extend } from './helper'
 import UA from './ua'
 import Cookie from './cookie'
 
-var client = {}
+var client = {
+  $extend (obj) {
+    extend(client, obj)
+  }
+}
 
-extend(client, UA)
-extend(client, Cookie)
+client.$extend(UA)
+client.$extend(Cookie)
 
 export default client

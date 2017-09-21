@@ -1,6 +1,6 @@
 {
   "name": "ez-client",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A tiny web browser(webview) tool.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

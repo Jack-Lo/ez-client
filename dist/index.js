@@ -156,10 +156,14 @@ var Cookie = {
   setCookie, getCookie, delCookie
 };
 
-var client = {};
+var client = {
+  $extend(obj) {
+    extend(client, obj);
+  }
+};
 
-extend(client, UA);
-extend(client, Cookie);
+client.$extend(UA);
+client.$extend(Cookie);
 
 return client;
 
