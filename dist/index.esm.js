@@ -36,7 +36,7 @@ function isMobile() {
 
 function isIOS() {
   // ios终端
-  return !!ua.match(/\(i[^;]+;( U;)? CPUa.+Mac OS X/);
+  return !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
 }
 
 function isAndroid() {

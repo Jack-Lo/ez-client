@@ -22,7 +22,7 @@ function isMobile () {  // 移动终端
 }
 
 function isIOS () {  // ios终端
-  return !!ua.match(/\(i[^;]+;( U;)? CPUa.+Mac OS X/)
+  return !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
 }
 
 function isAndroid () {  // android终端/uc浏览器
